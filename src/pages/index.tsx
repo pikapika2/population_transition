@@ -7,7 +7,7 @@ export default function Home(props: any) {
       {props.posts.result.map((item: any) => {
         return (
           <label key={item.prefCode}>
-            <input type="checkbox" key={item.prefCode} />
+            <input type="checkbox" key={item.prefCode} id={item.prefCode} />
             {item.prefName}
           </label>
         )
