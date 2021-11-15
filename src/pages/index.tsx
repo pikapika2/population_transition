@@ -21,9 +21,9 @@ export async function getServerSideProps() {
     'https://opendata.resas-portal.go.jp/api/v1/prefectures'
   )
   const keys: any = {
-    headers: {'x-api-key': process.env.API_KEY}
+    headers: { 'x-api-key': process.env.API_KEY },
   }
-  const posts = await fetch(url, keys).then(res => res.json())
+  const posts = await fetch(url, keys).then((res) => res.json())
   console.log(posts.result)
   return {
     props: {
