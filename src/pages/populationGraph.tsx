@@ -1,8 +1,9 @@
-import React from "react";
-import useSWR from 'swr';
-import Highcharts from "highcharts";
+import React from "react"
+import useSWR from 'swr'
+import fetch from 'unfetch'
+import Highcharts from "highcharts"
 import HighchartsExporting from 'highcharts/modules/exporting'
-import HighchartsReact from "highcharts-react-official";
+import HighchartsReact from "highcharts-react-official"
 
 const keys: any = {
       headers: { 'x-api-key': process.env.NEXT_PUBLIC_API_KEY },
@@ -15,9 +16,9 @@ const PopulationGraph: React.FunctionComponent = () => {
     HighchartsExporting(Highcharts)
   }
 
-  const res: any = useSWR('https://opendata.resas-portal.go.jp/api/v1/population/composition/perYear?cityCode=11362&prefCode=11', fetcher)
-  console.log(res)
-  if(! res) {
+  const res: any = useSWR('https://opendata.resas-portal.go.jp/api/v1/population/composition/perYear?cityCode=-&prefCode=32', fetcher)
+  console.log(res.data)
+  if(! res.data) {
   	return (
       <div>
         loading
