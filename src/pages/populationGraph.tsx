@@ -1,13 +1,13 @@
-import React from "react"
+import React from 'react'
 import useSWR from 'swr'
 import fetch from 'unfetch'
-import Highcharts from "highcharts"
+import Highcharts from 'highcharts'
 import HighchartsExporting from 'highcharts/modules/exporting'
-import HighchartsReact from "highcharts-react-official"
+import HighchartsReact from 'highcharts-react-official'
 
 const keys: any = {
-      headers: { 'x-api-key': process.env.NEXT_PUBLIC_API_KEY },
-    }
+  headers: { 'x-api-key': process.env.NEXT_PUBLIC_API_KEY },
+}
 
 const fetcher = (url: any) => fetch(url, keys).then((res) => res.json())
 
@@ -16,14 +16,13 @@ const PopulationGraph: React.FunctionComponent = () => {
     HighchartsExporting(Highcharts)
   }
 
-  const res: any = useSWR('https://opendata.resas-portal.go.jp/api/v1/population/composition/perYear?cityCode=-&prefCode=32', fetcher)
-  console.log(res.data)
-  if(! res.data) {
-  	return (
-      <div>
-        loading
-      </div>
-  	)
+  const res: any = useSWR(
+    'https://opendata.resas-portal.go.jp/api/v1/population/composition/perYear?cityCode=-&prefCode=32',
+    fetcher
+  )
+  console.log(res)
+  if (!res.data) {
+    return <div>loading</div>
   }
   /*if(error){
   	return (
@@ -36,16 +35,18 @@ const PopulationGraph: React.FunctionComponent = () => {
   let data = []
 
   for (let pd of res.data.result.data[0].data) {
-  	data.push(pd.value)
+    data.push(pd.value)
   }
 
   const options = {
     title: {
-      text: 'My chart'
+      text: 'My chart',
     },
-    series: [{
-      data: data
-    }]
+    series: [
+      {
+        data: data,
+      },
+    ],
   }
 
   return (

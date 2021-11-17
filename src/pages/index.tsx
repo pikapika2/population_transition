@@ -14,7 +14,7 @@ export default function Home(props: any) {
           </label>
         )
       })}
-       <PopulationGraph />
+      <PopulationGraph />
     </main>
   )
 }
