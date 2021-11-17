@@ -1,4 +1,5 @@
 import React, { FC } from 'react'
+import { GetStaticProps } from 'next'
 
 export default function Home(props: any) {
   return (
@@ -16,7 +17,7 @@ export default function Home(props: any) {
   )
 }
 
-export async function getServerSideProps() {
+export const getStaticProps: GetStaticProps = async (context) => {
   const url = encodeURI(
     'https://opendata.resas-portal.go.jp/api/v1/prefectures'
   )
