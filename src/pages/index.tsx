@@ -1,9 +1,10 @@
 import React, { FC } from 'react'
 import { GetStaticProps } from 'next'
+import PopulationGraph from './populationGraph'
 
 export default function Home(props: any) {
   return (
-    <div>
+    <main>
       <h1>template</h1>
       {props.posts.result.map((item: any) => {
         return (
@@ -13,7 +14,8 @@ export default function Home(props: any) {
           </label>
         )
       })}
-    </div>
+       <PopulationGraph />
+    </main>
   )
 }
 
