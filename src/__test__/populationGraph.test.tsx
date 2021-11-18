@@ -5,7 +5,6 @@ import { act } from 'react-dom/test-utils'
 import PopulationGraph from '../pages/populationGraph'
 
 let container: any = null
-let emptyData: any = []
 beforeEach(() => {
   // setup a DOM element as a render target
   container = document.createElement('div')
@@ -20,7 +19,8 @@ afterEach(() => {
 })
 
 describe('<PopulationGraph />', () => {
-  it('初期化成功しているか', () => {
+  it('初期化が成功しているか', () => {
+    let emptyData: any = []
     act(() => {
       render(<PopulationGraph populationData={emptyData} />, container)
     })
