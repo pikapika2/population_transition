@@ -1,21 +1,20 @@
 import React from 'react'
 
 type Props = {
-  prefectures:
-    | {
-        result: {
-          prefCode: number
-          prefName: string
-        }[]
-      }
+  prefectures: {
+    result: {
+      prefCode: number
+      prefName: string
+    }[]
+  }
 
   onChange: (event: any) => void
 }
 
 const Styles: { [key: string]: React.CSSProperties } = {
   pos: {
-    display: "inline-block",
-    fontSize: "18px"
+    display: 'inline-block',
+    fontSize: '18px',
   },
 }
 
@@ -28,9 +27,9 @@ const PcPrefecture: React.FC<Props> = ({ prefectures, onChange }) => {
       {prefectures.result.map((item) => {
         const id = String(item.prefCode)
         return (
-            <label key={item.prefCode} style={Styles.pos}>
+          <label key={item.prefCode} style={Styles.pos}>
             <input
-            key={item.prefCode}
+              key={item.prefCode}
               type="checkbox"
               id={id}
               name={item.prefName}
