@@ -16,22 +16,29 @@ export default function Home(props: any) {
   //const fetcher = (url: any) => fetch(url, client_keys).then((res) => res.json())
 
   const clickCheckbox = async (event: any) => {
-    let existPopulation = population.slice()
     console.log(event.checked)
-    console.log('kkkkk')
-    const clientKeys: any = {
-      headers: { 'x-api-key': process.env.NEXT_PUBLIC_API_KEY },
+
+    if (event.checked) {
+      let existPopulation = population.slice()
+      const clientKeys: any = {
+        headers: { 'x-api-key': process.env.NEXT_PUBLIC_API_KEY },
+      }
+      const url: any =
+        'https://opendata.resas-portal.go.jp/api/v1/population/composition/perYear?cityCode=-&prefCode=' +
+        event.id
+      const posts = await fetch(url, clientKeys).then((res) => res.json())
+      existPopulation.push({
+        prefName: event.name,
+        data: posts.result.data[0].data,
+      })
+      setPopulation(existPopulation)
+      return
+    } else {
+      let deletePopulation = population.filter(function (item) {
+        return item.prefName != event.name
+      })
+      setPopulation(deletePopulation)
     }
-    const url: any =
-      'https://opendata.resas-portal.go.jp/api/v1/population/composition/perYear?cityCode=-&prefCode=' +
-      event.id
-    const posts = await fetch(url, clientKeys).then((res) => res.json())
-    existPopulation.push({
-      prefName: event.name,
-      data: posts.result.data[0].data,
-    })
-    setPopulation(existPopulation)
-    return
   }
 
   return (
