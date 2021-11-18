@@ -1,6 +1,7 @@
 import React, { FC, useState } from 'react'
 import { GetStaticProps } from 'next'
 import PopulationGraph from './populationGraph'
+import MediaQuery from "react-responsive";
 
 export default function Home(props: any) {
   const [population, setPopulation] = useState<
@@ -45,6 +46,13 @@ export default function Home(props: any) {
   return (
     <main>
       <h1>都道府県人口推移グラフ</h1>
+      <MediaQuery query="(max-width: 767px)">
+        スマホ用
+      </MediaQuery>
+      <MediaQuery query="(min-width: 767px)">
+        PC用
+      </MediaQuery>
+      <div>
       {props.posts.result.map((item: any) => {
         return (
           <label key={item.prefCode}>
@@ -61,6 +69,7 @@ export default function Home(props: any) {
           </label>
         )
       })}
+      </div>
       <PopulationGraph populationData={population} />
     </main>
   )
