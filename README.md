@@ -1,8 +1,22 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# population_transition
 
-## Getting Started
+## 概要
+[RESAS-API](https://opendata.resas-portal.go.jp/)から都道府県ごとの人口推移グラフを取得し、グラフで表示するアプリである。
+本アプリはvercelにデプロイしている。
 
-First, run the development server:
+## 画面イメージ
+PC画面
+![PC画面](https://user-images.githubusercontent.com/34570780/142514526-6eb23b30-c193-43f9-8c5f-d7c2c510b8b2.png)
+
+スマホ画面(イメージ)
+![スマホ画面(イメージ)](https://user-images.githubusercontent.com/34570780/142514571-c606f239-c56f-4dc9-b5ed-6cbf2b6e6938.png)
+
+## 操作方法
+見たい都道府県のチェックボックスをクリックすれば良い。
+
+## 実行方法
+自身の環境で実行したい場合、
+まず、以下のコマンドで起動する。
 
 ```bash
 npm run dev
@@ -10,26 +24,10 @@ npm run dev
 yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+その後、[http://localhost:3000](http://localhost:3000) をブラウザで開くことで、見ることができる。
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+環境変数として、以下の二つを`.env`に用意している。
+- `API_KEY`
+- `NEXT_PUBLIC_API_KEY`
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
-# population_transition
+どちらもRESAS-APIで使用するapikeyが入っている。
