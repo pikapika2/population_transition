@@ -6,10 +6,10 @@
 
 ## 画面イメージ
 PC画面
-![PC画面](https://user-images.githubusercontent.com/34570780/142513156-0d732f21-29d8-404d-aed3-93e07beec344.png)
+![PC画面](https://user-images.githubusercontent.com/34570780/142514526-6eb23b30-c193-43f9-8c5f-d7c2c510b8b2.png)
 
 スマホ画面(イメージ)
-![スマホ画面(イメージ)](https://user-images.githubusercontent.com/34570780/142513222-b1ffc59c-beef-491e-aa37-3f9906963864.png)
+![スマホ画面(イメージ)](https://user-images.githubusercontent.com/34570780/142514571-c606f239-c56f-4dc9-b5ed-6cbf2b6e6938.png)
 
 ## 操作方法
 見たい都道府県のチェックボックスをクリックすれば良い。
