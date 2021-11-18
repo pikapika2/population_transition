@@ -19,12 +19,13 @@ const PopulationGraph: React.FunctionComponent<Props> = ({
   if (typeof Highcharts === 'object') {
     HighchartsExporting(Highcharts)
   }
-  let series = []
-  let year = []
 
   if (typeof populationData === 'undefined' || populationData.length === 0) {
     return <div>not data</div>
   }
+
+  let series = []
+  let year = []
 
   for (let p of populationData) {
     let data = []
@@ -38,17 +39,10 @@ const PopulationGraph: React.FunctionComponent<Props> = ({
       data: data,
     })
   }
-  /*if(series.length === 0){
-    return(
-      <div>
-      not data
-      </div>)
-  }*/
-  console.log(series)
 
   const options = {
     title: {
-      text: '都道府県人口推移',
+      text: '都道府県別人口推移',
     },
     yAxis: {
       title: {
