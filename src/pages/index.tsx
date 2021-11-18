@@ -48,9 +48,8 @@ export default function Home(props: any) {
       <h1>都道府県人口推移グラフ</h1>
       <MediaQuery query="(max-width: 767px)">スマホ用</MediaQuery>
       <MediaQuery query="(min-width: 767px)">
-        PC用
         <PcPrefecture
-          prefectures={props.posts.result}
+          prefectures={props.posts}
           onChange={clickCheckbox}
         />
       </MediaQuery>
