@@ -5,9 +5,10 @@
 本アプリはvercelにデプロイしている。
 
 ## 画面イメージ
+PC画面
 ![PC画面](https://user-images.githubusercontent.com/34570780/142513156-0d732f21-29d8-404d-aed3-93e07beec344.png)
 
-
+スマホ画面(イメージ)
 ![スマホ画面(イメージ)](https://user-images.githubusercontent.com/34570780/142513222-b1ffc59c-beef-491e-aa37-3f9906963864.png)
 
 ## 操作方法
