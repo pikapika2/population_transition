@@ -1,7 +1,8 @@
 import React, { FC, useState } from 'react'
 import { GetStaticProps } from 'next'
 import PopulationGraph from './populationGraph'
-import MediaQuery from "react-responsive";
+import PcPrefecture from './pcPrefecture'
+import MediaQuery from 'react-responsive'
 
 export default function Home(props: any) {
   const [population, setPopulation] = useState<
@@ -15,7 +16,6 @@ export default function Home(props: any) {
   >([])
 
   //const fetcher = (url: any) => fetch(url, client_keys).then((res) => res.json())
-
   const clickCheckbox = async (event: any) => {
     console.log(event.checked)
 
@@ -46,30 +46,14 @@ export default function Home(props: any) {
   return (
     <main>
       <h1>都道府県人口推移グラフ</h1>
-      <MediaQuery query="(max-width: 767px)">
-        スマホ用
-      </MediaQuery>
+      <MediaQuery query="(max-width: 767px)">スマホ用</MediaQuery>
       <MediaQuery query="(min-width: 767px)">
         PC用
+        <PcPrefecture
+          prefectures={props.posts.result}
+          onChange={clickCheckbox}
+        />
       </MediaQuery>
-      <div>
-      {props.posts.result.map((item: any) => {
-        return (
-          <label key={item.prefCode}>
-            <input
-              type="checkbox"
-              key={item.prefCode}
-              id={item.prefCode}
-              name={item.prefName}
-              onChange={(
-                e: React.ChangeEvent<HTMLInputElement>
-              ): Promise<void> => clickCheckbox(e.target)}
-            />
-            {item.prefName}
-          </label>
-        )
-      })}
-      </div>
       <PopulationGraph populationData={population} />
     </main>
   )
