@@ -17,7 +17,7 @@ const PopulationGraph: React.FunctionComponent = () => {
   }
 
   const res: any = useSWR(
-    'https://opendata.resas-portal.go.jp/api/v1/population/composition/perYear?cityCode=-&prefCode=32',
+    'https://opendata.resas-portal.go.jp/api/v1/population/composition/perYear?cityCode=-&prefCode=33',
     fetcher
   )
   console.log(res)
@@ -33,14 +33,27 @@ const PopulationGraph: React.FunctionComponent = () => {
   }*/
 
   let data = []
+  let year = []
 
   for (let pd of res.data.result.data[0].data) {
     data.push(pd.value)
+    year.push(pd.year)
   }
 
   const options = {
     title: {
-      text: 'My chart',
+      text: '都道府県人口推移',
+    },
+    yAxis: {
+      title: {
+        text: '人口'
+      }
+    },
+    xAxis: {
+      title: {
+        text: '年度'
+      },
+      categories: year,
     },
     series: [
       {
