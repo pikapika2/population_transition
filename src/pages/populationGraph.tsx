@@ -46,12 +46,12 @@ const PopulationGraph: React.FunctionComponent = () => {
     },
     yAxis: {
       title: {
-        text: '人口'
-      }
+        text: '人口',
+      },
     },
     xAxis: {
       title: {
-        text: '年度'
+        text: '年度',
       },
       categories: year,
     },
