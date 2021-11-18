@@ -5,22 +5,28 @@ import HighchartsReact from 'highcharts-react-official'
 
 type Props = {
   populationData: {
-    prefName: string,
+    prefName: string
     data: {
-      year: number,
-      value: number,
+      year: number
+      value: number
     }[]
   }[]
 }
 
-const PopulationGraph: React.FunctionComponent<Props> = ({populationData}) => {
+const PopulationGraph: React.FunctionComponent<Props> = ({
+  populationData,
+}) => {
   if (typeof Highcharts === 'object') {
     HighchartsExporting(Highcharts)
   }
   let series = []
   let year = []
 
-  for (let p of populationData){
+  if (typeof populationData === 'undefined' || populationData.length === 0) {
+    return <div>not data</div>
+  }
+
+  for (let p of populationData) {
     let data = []
 
     for (let pd of p.data) {
@@ -32,12 +38,12 @@ const PopulationGraph: React.FunctionComponent<Props> = ({populationData}) => {
       data: data,
     })
   }
-  if(series.length === 0){
+  /*if(series.length === 0){
     return(
       <div>
       not data
       </div>)
-  }
+  }*/
   console.log(series)
 
   const options = {
