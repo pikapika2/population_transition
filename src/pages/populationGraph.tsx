@@ -1,44 +1,44 @@
 import React from 'react'
-import useSWR from 'swr'
-import fetch from 'unfetch'
 import Highcharts from 'highcharts'
 import HighchartsExporting from 'highcharts/modules/exporting'
 import HighchartsReact from 'highcharts-react-official'
 
-const keys: any = {
-  headers: { 'x-api-key': process.env.NEXT_PUBLIC_API_KEY },
+type Props = {
+  populationData: {
+    prefName: string,
+    data: {
+      year: number,
+      value: number,
+    }[]
+  }[]
 }
 
-const fetcher = (url: any) => fetch(url, keys).then((res) => res.json())
-
-const PopulationGraph: React.FunctionComponent = () => {
+const PopulationGraph: React.FunctionComponent<Props> = ({populationData}) => {
   if (typeof Highcharts === 'object') {
     HighchartsExporting(Highcharts)
   }
-
-  const res: any = useSWR(
-    'https://opendata.resas-portal.go.jp/api/v1/population/composition/perYear?cityCode=-&prefCode=33',
-    fetcher
-  )
-  
-  if (!res.data) {
-    return <div>loading</div>
-  }
-  /*if(error){
-  	return (
-      <div>
-        fail to load
-      </div>
-  	)
-  }*/
-
-  let data = []
+  let series = []
   let year = []
 
-  for (let pd of res.data.result.data[0].data) {
-    data.push(pd.value)
-    year.push(pd.year)
+  for (let p of populationData){
+    let data = []
+
+    for (let pd of p.data) {
+      data.push(pd.value)
+      year.push(pd.year)
+    }
+    series.push({
+      name: p.prefName,
+      data: data,
+    })
   }
+  if(series.length === 0){
+    return(
+      <div>
+      not data
+      </div>)
+  }
+  console.log(series)
 
   const options = {
     title: {
@@ -55,11 +55,7 @@ const PopulationGraph: React.FunctionComponent = () => {
       },
       categories: year,
     },
-    series: [
-      {
-        data: data,
-      },
-    ],
+    series: series,
   }
 
   return (

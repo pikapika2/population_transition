@@ -4,17 +4,28 @@ import PopulationGraph from './populationGraph'
 
 export default function Home(props: any) {
   const [population, setPopulation] = useState<{
-    result: {
-      prefName: string,
-      data: {
-        year: number,
-        value: number,
-      }
-    }
+    prefName: string,
+    data: {
+      year: number,
+      value: number,
+    }[]
   }[]>([])
 
-  const clickCheckbox = () => {
-    console.log('ssss')
+  //const fetcher = (url: any) => fetch(url, client_keys).then((res) => res.json())
+
+  const clickCheckbox = async (event: any) => {
+    let existPopulation = population.slice()
+    console.log(event.checked)
+    const clientKeys: any = {
+      headers: { 'x-api-key': process.env.NEXT_PUBLIC_API_KEY },
+    }
+    const url: any = 'https://opendata.resas-portal.go.jp/api/v1/population/composition/perYear?cityCode=-&prefCode=' + event.id
+    const posts = await fetch(url, clientKeys).then((res) => res.json())
+    existPopulation.push({
+      prefName: event.name,
+      data: posts.result.data[0].data
+    })
+    setPopulation(existPopulation)
     return
   }
 
@@ -24,12 +35,12 @@ export default function Home(props: any) {
       {props.posts.result.map((item: any) => {
         return (
           <label key={item.prefCode}>
-            <input type="checkbox" key={item.prefCode} id={item.prefCode} onChange={clickCheckbox}/>
+            <input type="checkbox" key={item.prefCode} id={item.prefCode} name={item.prefName} onChange={(e: React.ChangeEvent<HTMLInputElement>): Promise<void> => clickCheckbox(e.target)}/>
             {item.prefName}
           </label>
         )
       })}
-      <PopulationGraph />
+      <PopulationGraph populationData={population}/>
     </main>
   )
 }
