@@ -25,7 +25,8 @@ export default function Home(props: any) {
       }
       const url: any = encodeURI(
         'https://opendata.resas-portal.go.jp/api/v1/population/composition/perYear?cityCode=-&prefCode=' +
-        event.id)
+          event.id
+      )
       const posts = await fetch(url, clientKeys).then((res) => res.json())
       existPopulation.push({
         prefName: event.name,
