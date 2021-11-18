@@ -20,7 +20,7 @@ const PopulationGraph: React.FunctionComponent = () => {
     'https://opendata.resas-portal.go.jp/api/v1/population/composition/perYear?cityCode=-&prefCode=33',
     fetcher
   )
-  console.log(res)
+  
   if (!res.data) {
     return <div>loading</div>
   }

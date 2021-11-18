@@ -1,15 +1,30 @@
-import React, { FC } from 'react'
+import React, { FC, useState } from 'react'
 import { GetStaticProps } from 'next'
 import PopulationGraph from './populationGraph'
 
 export default function Home(props: any) {
+  const [population, setPopulation] = useState<{
+    result: {
+      prefName: string,
+      data: {
+        year: number,
+        value: number,
+      }
+    }
+  }[]>([])
+
+  const clickCheckbox = () => {
+    console.log('ssss')
+    return
+  }
+
   return (
     <main>
       <h1>template</h1>
       {props.posts.result.map((item: any) => {
         return (
           <label key={item.prefCode}>
-            <input type="checkbox" key={item.prefCode} id={item.prefCode} />
+            <input type="checkbox" key={item.prefCode} id={item.prefCode} onChange={clickCheckbox}/>
             {item.prefName}
           </label>
         )
