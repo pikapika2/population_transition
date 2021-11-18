@@ -2,7 +2,14 @@ import React, { FC, useState } from 'react'
 import { GetStaticProps } from 'next'
 import PopulationGraph from './populationGraph'
 import PcPrefecture from './pcPrefecture'
+import SmartphonePrefecture from './smartphonePrefecture'
 import MediaQuery from 'react-responsive'
+
+const Styles: { [key: string]: React.CSSProperties } = {
+  center: {
+    textAlign: "center",
+  },
+}
 
 export default function Home(props: any) {
   const [population, setPopulation] = useState<
@@ -45,8 +52,13 @@ export default function Home(props: any) {
 
   return (
     <main>
-      <h1>都道府県人口推移グラフ</h1>
-      <MediaQuery query="(max-width: 767px)">スマホ用</MediaQuery>
+      <h1 style={Styles.center}>都道府県人口推移グラフ</h1>
+      <MediaQuery query="(max-width: 767px)">
+      <SmartphonePrefecture
+          prefectures={props.posts}
+          onChange={clickCheckbox}
+        />
+        </MediaQuery>
       <MediaQuery query="(min-width: 767px)">
         <PcPrefecture
           prefectures={props.posts}

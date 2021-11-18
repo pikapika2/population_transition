@@ -12,6 +12,13 @@ type Props = {
   onChange: (event: any) => void
 }
 
+const Styles: { [key: string]: React.CSSProperties } = {
+  pos: {
+    display: "inline-block",
+    fontSize: "18px"
+  },
+}
+
 const PcPrefecture: React.FC<Props> = ({ prefectures, onChange }) => {
   if (typeof prefectures === 'undefined' || prefectures.result.length === 0) {
     return <div>not data</div>
@@ -21,7 +28,7 @@ const PcPrefecture: React.FC<Props> = ({ prefectures, onChange }) => {
       {prefectures.result.map((item) => {
         const id = String(item.prefCode)
         return (
-            <label key={item.prefCode}>
+            <label key={item.prefCode} style={Styles.pos}>
             <input
             key={item.prefCode}
               type="checkbox"
