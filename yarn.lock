@@ -2647,10 +2647,10 @@ highcharts-react-official@3.1.0:
   resolved "https://registry.npmjs.org/highcharts-react-official/-/highcharts-react-official-3.1.0.tgz"
   integrity sha512-CkWJHrVMOc6CT8KFu1dR+a0w5OxCVKKgZUNWtEi5TmR0xqBDIDe+RyM652MAN/jBYppxMo6TCUVlRObCyWAn0Q==
 
-highcharts@9.3.1:
-  version "9.3.1"
-  resolved "https://registry.npmjs.org/highcharts/-/highcharts-9.3.1.tgz"
-  integrity sha512-T5BjvY2CDtqlKRbid1Jd22psBp8tV9+7fm+x7h+EZuXF0OVDLR5128sRuC6WCWVss4cTVzS6PKnlnXKfYskIhw==
+highcharts@9.3.2:
+  version "9.3.2"
+  resolved "https://registry.npmjs.org/highcharts/-/highcharts-9.3.2.tgz"
+  integrity sha512-I/48gNMvs3hZxZnPRUqLbnlrGZJJ7YPPVr1+fYeZ35p4pSZAOwTmAGbptrjBr7JlF52HmJH9zMbt/I4TPLu9Pg==
 
 hmac-drbg@^1.0.1:
   version "1.0.1"
