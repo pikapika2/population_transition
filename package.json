@@ -11,7 +11,7 @@
     "test": "jest"
   },
   "dependencies": {
-    "highcharts": "9.3.1",
+    "highcharts": "9.3.2",
     "highcharts-react-official": "3.1.0",
     "iconv-lite": "0.6.3",
     "next": "12.0.4",
