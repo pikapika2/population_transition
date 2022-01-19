@@ -834,9 +834,9 @@
   resolved "https://registry.npmjs.org/@types/prettier/-/prettier-2.4.2.tgz"
   integrity sha512-ekoj4qOQYp7CvjX8ZDBgN86w3MqQhLE1hczEJbEIjgFEumDy+na/4AJAbLXfgEWFNB2pKadM5rPFtuSGMWK7xA==
 
-"@types/pretty@^2.0.0":
+"@types/pretty@2.0.0":
   version "2.0.0"
-  resolved "https://registry.npmjs.org/@types/pretty/-/pretty-2.0.0.tgz"
+  resolved "https://registry.yarnpkg.com/@types/pretty/-/pretty-2.0.0.tgz#4e8ce2f200db5de424791d0bc8d023f24ff312a9"
   integrity sha512-nojaE6CV03swMxoHnAisV2Rl0Ma6WPUtQo87hUmaotu/YPugPlmiRB60sthbyppXdMFTdJV3wm6zCENY4q1tKA==
 
 "@types/prop-types@*":
@@ -3797,9 +3797,9 @@ react-refresh@0.8.3:
   resolved "https://registry.npmjs.org/react-refresh/-/react-refresh-0.8.3.tgz"
   integrity sha512-X8jZHc7nCMjaCqoU+V2I0cOhNW+QMBwSUkeXnTi8IPe6zaRWfn60ZzvFDZqWPfmSJfjub7dDW1SP0jaHWLu/hg==
 
-react-responsive@^9.0.0-beta.4:
+react-responsive@9.0.0-beta.4:
   version "9.0.0-beta.4"
-  resolved "https://registry.npmjs.org/react-responsive/-/react-responsive-9.0.0-beta.4.tgz"
+  resolved "https://registry.yarnpkg.com/react-responsive/-/react-responsive-9.0.0-beta.4.tgz#90c1f1a4048971497ca9795068af6803eabc0ddb"
   integrity sha512-jQSs5kIi38T39Ku98r8s75jM6JAaNEeVrHPHTrL2EYWuv8nusV3KRQcZZ4VlfwndIRedxmpb4T8FXA9ltlCFiw==
   dependencies:
     hyphenate-style-name "^1.0.0"
