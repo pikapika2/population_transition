@@ -3,7 +3,7 @@ import { GetStaticProps } from 'next'
 import PopulationGraph from './populationGraph'
 import PcPrefecture from './pcPrefecture'
 import SmartphonePrefecture from './smartphonePrefecture'
-import {useMediaQuery} from 'react-responsive'
+import { useMediaQuery } from 'react-responsive'
 
 const Styles: { [key: string]: React.CSSProperties } = {
   center: {
@@ -21,9 +21,8 @@ export default function Home(props: any) {
       }[]
     }[]
   >([])
-  const isPcScreen = useMediaQuery({query: '(min-width: 767px)'})
-  const isSmartphoneScreen = useMediaQuery({query: '(max-width: 767px)'})
-
+  const isPcScreen = useMediaQuery({ query: '(min-width: 767px)' })
+  const isSmartphoneScreen = useMediaQuery({ query: '(max-width: 767px)' })
 
   //const fetcher = (url: any) => fetch(url, client_keys).then((res) => res.json())
   const clickCheckbox = async (event: any) => {
@@ -56,18 +55,18 @@ export default function Home(props: any) {
   return (
     <main>
       <h1 style={Styles.center}>都道府県人口推移グラフ</h1>
-      {isSmartphoneScreen &&
+      {isSmartphoneScreen && (
         <SmartphonePrefecture
           prefectures={props.posts.result}
           onChange={clickCheckbox}
         />
-      }
-      {isPcScreen &&
+      )}
+      {isPcScreen && (
         <PcPrefecture
           prefectures={props.posts.result}
           onChange={clickCheckbox}
         />
-      }
+      )}
       <PopulationGraph populationData={population} />
     </main>
   )
