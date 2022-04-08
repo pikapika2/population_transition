@@ -53,13 +53,13 @@ export default function Home(props: any) {
   return (
     <main>
       <h1 style={Styles.center}>都道府県人口推移グラフ</h1>
-      <MediaQuery query="(max-width: 767px)">
+      <MediaQuery maxWidth={767}>
         <SmartphonePrefecture
           prefectures={props.posts.result}
           onChange={clickCheckbox}
         />
       </MediaQuery>
-      <MediaQuery query="(min-width: 767px)">
+      <MediaQuery minWidth={767}>
         <PcPrefecture
           prefectures={props.posts.result}
           onChange={clickCheckbox}
