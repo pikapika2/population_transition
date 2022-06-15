@@ -27,7 +27,7 @@
     "@types/node": "16.11.27",
     "@types/pretty": "2.0.1",
     "@types/react": "18.0.1",
-    "@types/react-dom": "18.0.0",
+    "@types/react-dom": "18.0.5",
     "eslint": "7.32.0",
     "eslint-config-next": "12.1.5",
     "fetch-mock": "9.11.0",
