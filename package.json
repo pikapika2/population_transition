@@ -24,7 +24,7 @@
   "devDependencies": {
     "@testing-library/react": "13.4.0",
     "@types/jest": "27.4.1",
-    "@types/node": "16.11.59",
+    "@types/node": "16.18.114",
     "@types/pretty": "2.0.1",
     "@types/react": "18.0.1",
     "@types/react-dom": "18.0.5",
