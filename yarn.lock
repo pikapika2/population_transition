@@ -1051,10 +1051,10 @@
   resolved "https://registry.npmjs.org/@types/prettier/-/prettier-2.4.2.tgz"
   integrity sha512-ekoj4qOQYp7CvjX8ZDBgN86w3MqQhLE1hczEJbEIjgFEumDy+na/4AJAbLXfgEWFNB2pKadM5rPFtuSGMWK7xA==
 
-"@types/pretty@2.0.1":
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/@types/pretty/-/pretty-2.0.1.tgz#192426eb6f640239e3e0224f60ebec39d4e125e4"
-  integrity sha512-l18spTC0Q2OEUIHGPyw37XBOacFI4Kng1fgfFjgDTg2FR9wqJ/NY9zWyXv87NRUlFDU6JA+E/GVnNJiWgyon6A==
+"@types/pretty@2.0.3":
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/@types/pretty/-/pretty-2.0.3.tgz#0eb67675ea47e729b5be394750c9c6c05a7916a3"
+  integrity sha512-xR96pShNlrxLd3gZqzCnbaAmbYhiRYjW51CDFjektZemqpBZBAAkMwxm4gBraJP/xSgKcsQhLXdlXOwDNWo4VQ==
 
 "@types/prop-types@*":
   version "15.7.4"
